@@ -448,13 +448,14 @@ export class Scrollbar implements I.Scrollbar {
       this._updateDebounced();
     }
 
-    const destX = clamp(deltaX + offset.x, 0, limit.x);
+    // const destX = clamp(deltaX + offset.x, 0, limit.x);
+    deltaX = deltaX;
     const destY = clamp(deltaY + offset.y, 0, limit.y);
     let res = true;
 
     // offsets are not about to change
     // `&=` operator is not allowed for boolean types
-    res = res && (destX === offset.x);
+    // res = res && (destX === offset.x);
     res = res && (destY === offset.y);
 
     // current offsets are on the edge
